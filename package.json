@@ -1,0 +1,46 @@
+{
+  "name": "getir-backend-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "babel-node -- ./src/app.js",
+    "build": "rm -rf dist && babel src -d dist",
+    "start": "npm run build && node ./dist/app.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lateefat Amuda",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teepha/getir-backend-challenge.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teepha/getir-backend-challenge/issues"
+  },
+  "homepage": "https://github.com/teepha/getir-backend-challenge#readme",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "auto-bind": "^4.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.8.1",
+    "mongoose": "^5.11.8"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nyc": "^15.1.0"
+  }
+}
