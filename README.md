@@ -74,9 +74,9 @@ $ npm run test
     minCount: <integer>,
     maxCount: <integer>
     }
-  } ```
+  } 
+  ```
  
-
 
 ## Author
 
