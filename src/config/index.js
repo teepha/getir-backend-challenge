@@ -15,4 +15,5 @@ const config = {
     dev: process.env.DB_URL,
   },
 };
+
 export default config;
