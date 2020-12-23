@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Getir Backend Challenge API documentation",
+    "version": "1.0.0",
+    "title": "Getir Backend Challenge API Doc",
+    "contact": {
+      "email": "teepha06@gmail.com"
+    }
+  },
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "record",
+      "description": "Everything about records"
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/records": {
+      "post": {
+        "tags": ["record"],
+        "summary": "Fetch records",
+        "description": "Fetch records based on startDate, endDate, minCount and maxCount",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Input data",
+            "required": true,
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/requestPayload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{ code: 0, msg: 'Success', records: [] }"
+          },
+          "400": {
+            "description": "{ code: 1, msg: 'startDate must be a valid date' or 'minCount must be number' }"
+          },
+          "500": {
+            "description": "{ code: 1, msg: 'Database error ' }"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "requestPayload": {
+      "required": ["startDate", "endDate", "minCount", "maxCount"],
+      "properties": {
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "minCount": {
+          "type": "number"
+        },
+        "maxCount": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

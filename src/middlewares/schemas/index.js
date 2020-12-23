@@ -24,11 +24,16 @@ const schemas = {
       "number.empty": "Min count field is required",
       "any.required": "Min count field is required",
     }),
-    maxCount: Joi.number().required().strict().messages({
-      "number.base": "maxCount must be number",
-      "number.empty": "Max count field is required",
-      "any.required": "Max count field is required",
-    }),
+    maxCount: Joi.number()
+      .required()
+      .strict()
+      .greater(Joi.ref("minCount"))
+      .messages({
+        "number.base": "maxCount must be number",
+        "number.empty": "Max count field is required",
+        "any.required": "Max countfield is required",
+        "number.greater": "Max count must be greater than Min count",
+      }),
   }),
 };
 

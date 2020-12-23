@@ -13,7 +13,7 @@ const validatePayload = (schema) => {
       const { details } = error;
       const message = details.map((detail) => detail.message).join(",");
 
-      return response({ res, statusCode: 422, message });
+      return response({ res, statusCode: 400, message });
     }
 
     next();

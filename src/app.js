@@ -8,12 +8,15 @@ import routes from "./routes";
 import connectToDatabase from "./config/db";
 import config from "./config";
 import logger from "./config/logger";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "../getir-backend-challenge.json";
 
 dotenv.config();
 
 const app = express();
 
 app.enable("trust proxy");
+
 // Enable Cross Origin Resource Sharing to all origins
 app.use(cors());
 
@@ -23,6 +26,9 @@ app.use(requestLogger("dev"));
 // Parse incoming requests data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// api documentation
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
 app.use("/api", routes);
