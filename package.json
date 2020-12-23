@@ -8,7 +8,7 @@
     "build": "rm -rf dist && babel src -d dist",
     "start": "npm run build && node ./dist/index.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Lateefat Amuda",
   "repository": {
@@ -41,10 +41,13 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "babel-jest": "^26.6.3",
     "coveralls": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
-    "nyc": "^15.1.0"
+    "jest": "^26.6.3",
+    "nyc": "^15.1.0",
+    "supertest": "^6.0.1"
   }
 }

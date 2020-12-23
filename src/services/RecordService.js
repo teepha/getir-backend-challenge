@@ -1,16 +1,17 @@
-import RecordRepository from "../repositories/RecordRepository";
 import startOfDay from "date-fns/startOfDay";
 import endOfDay from "date-fns/endOfDay";
 
-const recordRepository = new RecordRepository();
-
 class RecordService {
+  constructor(recordRepository) {
+    this.recordRepository = recordRepository;
+  }
+
   /**
    * @description Fetch records service function
    * @param {object} options
    * @returns {array} allRecords
    */
-  static async fetchRecords(options) {
+  async fetchRecords(options) {
     const { startDate, endDate, minCount, maxCount } = options;
 
     const projectPipeline = {
@@ -38,7 +39,7 @@ class RecordService {
     };
 
     try {
-      const allRecords = recordRepository.aggregation([
+      const allRecords = await this.recordRepository.aggregation([
         projectPipeline,
         matchPipeline,
       ]);

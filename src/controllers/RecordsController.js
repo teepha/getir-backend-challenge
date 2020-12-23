@@ -1,6 +1,10 @@
 import RecordService from "../services/RecordService";
+import RecordRepository from "../repositories/RecordRepository";
 import { response } from "../utils";
 import logger from "../config/logger";
+
+const recordRepository = new RecordRepository();
+const recordService = new RecordService(recordRepository);
 
 class RecordsController {
   /**
@@ -13,7 +17,7 @@ class RecordsController {
     try {
       const { startDate, endDate, minCount, maxCount } = req.body;
 
-      const records = await RecordService.fetchRecords({
+      const records = await recordService.fetchRecords({
         startDate,
         endDate,
         minCount,

@@ -2,7 +2,6 @@ import "babel-polyfill";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import dotenv from "dotenv";
 import requestLogger from "morgan";
 import routes from "./routes";
 import connectToDatabase from "./config/db";
@@ -11,8 +10,7 @@ import logger from "./config/logger";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../getir-backend-challenge.json";
 
-dotenv.config();
-
+let server;
 const app = express();
 
 app.enable("trust proxy");
@@ -44,10 +42,10 @@ const connectionUrl = config.env === "test" ? config.db.test : config.db.dev;
 // connect to database
 connectToDatabase(connectionUrl)
   .then(() => {
-    app.listen(config.port, () => {
+    server = app.listen(config.port, () => {
       logger.info(`Server listening on port ${config.port} 🔥`);
     });
   })
   .catch((error) => console.log("An error occured. Unable to start server."));
 
-export default app;
+export { app, server };

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import server from "./app";
+import { app } from "./app";
 import logger from "./config/logger";
 
 mongoose.connection
@@ -14,7 +14,7 @@ mongoose.connection
     logger.error(`Database error ${error.message}`);
   });
 
-server.on("error", (error) => {
+app.on("error", (error) => {
   logger.error(`${error.message}: ${error.stack}`);
 });
 

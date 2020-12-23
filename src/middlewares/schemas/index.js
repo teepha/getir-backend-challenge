@@ -3,10 +3,10 @@ import Joi from "@hapi/joi";
 const schemas = {
   recordPost: Joi.object({
     startDate: Joi.date().required().max("now").messages({
-      "date.empty": "Start date is required",
+      "date.empty": "startDate is required",
       "date.base": "startDate must be a valid date",
-      "any.required": "Start date is required",
-      "date.max": "Start date must be less than or equal to today",
+      "any.required": "startDate is required",
+      "date.max": "startDate must be less than or equal to today",
     }),
     endDate: Joi.date()
       .empty(null)
@@ -14,15 +14,15 @@ const schemas = {
       .max("now")
       .messages({
         "date.base": "endDate must be a valid date",
-        "date.greater": "End date must be greater than Start date",
-        "date.ref": "End date must be greater than Start date",
-        "date.max": "End date must be less than or equal to today",
-        "any.required": "End date is required",
+        "date.greater": "endDate must be greater than Start date",
+        "date.ref": "endDate must be greater than Start date",
+        "date.max": "endDate must be less than or equal to today",
+        "any.required": "endDate is required",
       }),
     minCount: Joi.number().required().strict().messages({
       "number.base": "minCount must be number",
-      "number.empty": "Min count field is required",
-      "any.required": "Min count field is required",
+      "number.empty": "minCount field is required",
+      "any.required": "minCount field is required",
     }),
     maxCount: Joi.number()
       .required()
@@ -30,9 +30,9 @@ const schemas = {
       .greater(Joi.ref("minCount"))
       .messages({
         "number.base": "maxCount must be number",
-        "number.empty": "Max count field is required",
-        "any.required": "Max countfield is required",
-        "number.greater": "Max count must be greater than Min count",
+        "number.empty": "maxCount is required",
+        "any.required": "maxCount is required",
+        "number.greater": "maxCount must be greater than minCount",
       }),
   }),
 };
