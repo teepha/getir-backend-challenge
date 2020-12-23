@@ -13,9 +13,6 @@ dotenv.config();
 
 const app = express();
 
-app.get("/status", (req, res) =>
-  res.status(200).json({ message: "Welcome to the home page" })
-);
 app.enable("trust proxy");
 // Enable Cross Origin Resource Sharing to all origins
 app.use(cors());

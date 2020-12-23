@@ -8,6 +8,7 @@ const createLogger = () => {
   const filename = config.logs.filename;
   const logger = winston.createLogger({ level });
   const hasLogFile = typeof filename === "string" && filename.length > 0;
+
   logger.add(
     new winston.transports.Console({
       format: winston.format.combine(
@@ -22,6 +23,7 @@ const createLogger = () => {
       ),
     })
   );
+
   if (hasLogFile) {
     logger.add(
       new winston.transports.File({
@@ -36,7 +38,10 @@ const createLogger = () => {
       })
     );
   }
+
   return logger;
 };
+
 const logger = createLogger();
+
 export default logger;

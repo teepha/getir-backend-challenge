@@ -1,5 +1,10 @@
 import { response } from "../utils";
 
+/**
+ * @description Middleware function that validates request payload
+ * @param {object} schema
+ * @returns {object} response data
+ */
 const validatePayload = (schema) => {
   return (req, res, next) => {
     const { error } = schema.validate(req.body);
