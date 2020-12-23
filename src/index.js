@@ -22,7 +22,7 @@ process.on("SIGINT", () => {
   logger.warn("Shutting down server...");
   mongoose.connection.close(); // properly close db connection
   logger.info(`Server successfully shutdown at ${Date.now()}`);
-  process.exit(1);
+  process.exit(0);
 });
 
 process.on("uncaughtException", (err) => {

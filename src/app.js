@@ -34,7 +34,7 @@ app.use("/api", routes);
 // error handlers
 app.use("*", (req, res) =>
   res.status(404).json({
-    message: "Well, will you help build this route? 🤷🏼‍♂️",
+    message: "Route not found!",
   })
 );
 

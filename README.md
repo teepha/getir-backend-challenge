@@ -64,19 +64,19 @@ $ npm run test
 
 ## API endpoints
 
-**Base_URL**-> localhost:4000/api/
+**Base_URL**-> localhost:4000/api
 
   - Fetch records:
     
   ```
   {
-    path: 'records',
+    path: '/records',
     method: POST,
     body: {
-    startDate: <string>,
-    endDate: <string>,
-    minCount: <integer>,
-    maxCount: <integer>
+      startDate: <string>,
+      endDate: <string>,
+      minCount: <integer>,
+      maxCount: <integer>
     }
   } 
   ```
