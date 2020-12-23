@@ -19,11 +19,11 @@ The purpose of this challenge is to create a RESTful API with a single endpoint 
 
 ## Link to Hosted App
 
-- [API link](#)
+- [API link](http://ec2-54-146-235-232.compute-1.amazonaws.com/api/)
 
 ## Link to Swagger Doc
 
-- [Swaager Doc link](#)
+- [Swaager Doc link](http://54.146.235.232/api-docs/)
 
 ## Tech Stack Used
 
