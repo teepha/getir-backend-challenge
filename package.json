@@ -7,7 +7,7 @@
     "dev": "babel-node -- ./src/index.js",
     "build": "rm -rf dist && babel src -d dist",
     "start": "npm run build && node ./dist/index.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test": "jest"
   },
   "author": "Lateefat Amuda",
@@ -47,7 +47,6 @@
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
     "jest": "^26.6.3",
-    "nyc": "^15.1.0",
     "supertest": "^6.0.1"
   }
 }
