@@ -65,7 +65,8 @@ $ npm run test
 
   - Fetch records:
     
-  ```{
+  ```
+  {
     path: 'records',
     method: POST,
     body: {
