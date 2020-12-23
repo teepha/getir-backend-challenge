@@ -1,4 +1,7 @@
 # Getir Backend Challenge
+[![Build Status](https://travis-ci.com/teepha/getir-backend-challenge.svg?branch=development)](https://travis-ci.com/teepha/getir-backend-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/teepha/getir-backend-challenge/badge.svg?branch=development)](https://coveralls.io/github/teepha/getir-backend-challenge?branch=development)
+[![Maintainability](https://api.codeclimate.com/v1/badges/79e86b0d10aad37bbd69/maintainability)](https://codeclimate.com/github/teepha/getir-backend-challenge/maintainability)
 
 ## Introduction
 
