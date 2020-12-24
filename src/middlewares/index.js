@@ -1,10 +1,5 @@
-import { response } from "../utils";
+import { formatResponse } from "../utils";
 
-/**
- * @description Middleware function that validates request payload
- * @param {object} schema
- * @returns {object} response data
- */
 const validatePayload = (schema) => {
   return (req, res, next) => {
     const { error } = schema.validate(req.body);
@@ -13,7 +8,7 @@ const validatePayload = (schema) => {
       const { details } = error;
       const message = details.map((detail) => detail.message).join(",");
 
-      return response({ res, statusCode: 400, message });
+      return formatResponse({ res, statusCode: 400, message });
     }
 
     next();

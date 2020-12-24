@@ -5,11 +5,6 @@ class BaseRepository {
     this.collectionName = collectionName;
   }
 
-  /**
-   * @description Aggregation pipeline repository function
-   * @param {array} pipelines
-   * @returns {array} data
-   */
   async aggregation(pipelines) {
     try {
       const collection = await connection.db.collection(this.collectionName);

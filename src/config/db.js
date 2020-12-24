@@ -1,11 +1,6 @@
 import assert from "assert";
 import mongoose from "mongoose";
 
-/**
- * @description Method that creates a connection to a MongoDB database
- * @param {string} connectionUrl
- * @returns {import('mongoose').Connection}
- */
 const connectToDatabase = (connectionUrl) => {
   assert(
     typeof connectionUrl === "string" && connectionUrl.trim(),

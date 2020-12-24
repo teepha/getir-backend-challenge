@@ -95,4 +95,17 @@ describe("record API POST", () => {
     expect(msg).toEqual("Success");
     expect(records.length).toBeTruthy();
   });
+
+  test("should return an error if database or server connection is lost", async () => {
+    await connection.disconnect();
+    await server.close();
+
+    const result = await request.post("/api/records").send(validPayload);
+    const {
+      body: { code, msg },
+    } = result;
+
+    expect(code).toEqual(1);
+    expect(msg).toEqual("Topology is closed, please connect");
+  });
 });

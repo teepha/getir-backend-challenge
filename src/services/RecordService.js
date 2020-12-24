@@ -6,11 +6,6 @@ class RecordService {
     this.recordRepository = recordRepository;
   }
 
-  /**
-   * @description Fetch records service function
-   * @param {object} options
-   * @returns {array} allRecords
-   */
   async fetchRecords(options) {
     const { startDate, endDate, minCount, maxCount } = options;
 
