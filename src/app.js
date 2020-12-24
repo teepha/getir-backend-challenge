@@ -45,7 +45,6 @@ connectToDatabase(connectionUrl)
     server = app.listen(config.port, () => {
       logger.info(`Server listening on port ${config.port} 🔥`);
     });
-  })
-  .catch((error) => console.log("An error occured. Unable to start server."));
+  });
 
 export { app, server };
