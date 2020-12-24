@@ -7,7 +7,7 @@
     "dev": "babel-node -- ./src/index.js",
     "build": "rm -rf dist && babel src -d dist",
     "start": "npm run build && node ./dist/index.js",
-    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "coverage": "jest --coverage --runInBand && cat ./coverage/lcov.info | coveralls",
     "test": "jest --runInBand"
   },
   "author": "Lateefat Amuda",
